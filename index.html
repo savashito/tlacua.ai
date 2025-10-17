@@ -67,7 +67,8 @@
         }
         
         .color-grey {
-            color: #737373; /* Medium grey */
+            /* color: #737373; Medium grey */
+            color: rgb(153, 153, 153); /* Medium grey */
         }
     </style>
 </head>
@@ -148,7 +149,7 @@
                     </div>
                     <div class="md:pl-12">
                         <h2 class="text-3xl main-heading mb-4 framer-style-clone color-dark">Small, domain-tuned models</h2>
-                        <p class="text-lg text-gray-600 framer-style-clone">
+                        <p class="text-lg  framer-style-clone">
                             Domain-tuned SLMs (7B–13B) offer high quality and lower energy and cost compared to 70B+ models
                         </p>
                     </div>
@@ -158,7 +159,7 @@
                 <div class="grid md:grid-cols-2 gap-10 items-center">
                     <div class="md:pr-12">
                         <h2 class="text-3xl main-heading mb-4 framer-style-clone color-dark">Transparent privacy</h2>
-                        <p class="text-lg text-gray-600 framer-style-clone ">
+                        <p class="text-lg  framer-style-clone ">
                             Zero data retention. Clear policies, opt-in learning, and auditability so you stay in control
                         </p>
                     </div>
@@ -176,56 +177,115 @@
         </section>
 
         <!-- 3. Benefits Grid (Lower Carbon, Enterprise Ready, Future-proof) -->
-<section id="benefits" class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+<section id="compliance" class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl main-heading mb-12 text-center text-gray-800 framer-style-clone color-dark">Why Tlacua?</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
         <!-- Card 1: Lower Carbon -->
-        <div class="p-6 md:p-10 border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+        <div class=" transition duration-300">
             <!-- Placeholder Icon/Shape (Rectangle) -->
             <img src="media/low_carbon.jpg" 
             alt="Lock symbol with security icons" 
-            style="    padding-left: 20%;
-                       padding-right: 20%;"
+            style="padding: 10%;"
             onerror="this.src='https://placehold.co/600x400/f0f0f0/1e1e1e?text=Privacy+Lock+Graphic'" loading="lazy">
             
-            <h3 class="text-xl font-bold main-heading mb-3 text-primary-dark">Lower carbon.</h3>
-            <p class="text-base text-gray-600">
-                Efficient hardware and optimized SLMs minimize energy and reduce total cost of ownership.
+            <h3 class="text-xl font-bold main-heading mb-3 framer-style-clone color-dark">Lower carbon</h3>
+            <p class="text-base framer-style-clone ">
+                Efficient hardware and optimized SLMs minimize energy while still performing excelent for your specific tasks
             </p>
         </div>
 
         <!-- Card 2: Enterprise Ready -->
-        <div class="p-6 md:p-10 border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+        <div class=" transition duration-300">
             <!-- Placeholder Icon/Shape (Circle) -->
-            <div class="h-24 w-full bg-gray-200 rounded-full mb-6"></div>
+            <img src="media/enterprise_ready.jpg" 
+            alt="Lock symbol with security icons" 
+            style="padding: 10%;"
+            onerror="this.src='https://placehold.co/600x400/f0f0f0/1e1e1e?text=Privacy+Lock+Graphic'" loading="lazy">
             
-            <h3 class="text-xl font-bold main-heading mb-3 text-primary-dark">Enterprise ready.</h3>
-            <p class="text-base text-gray-600">
-                RBAC, SSO, and private deployments support the needs of security-sensitive teams.
+            <h3 class="text-xl font-bold main-heading mb-3 framer-style-clone color-dark">Enterprise ready</h3>
+            <p class="text-base framer-style-clone ">
+                RBAC, SSO, and private deployments support the needs of security-sensitive teams
             </p>
         </div>
 
         <!-- Card 3: Future-proof -->
-        <div class="p-6 md:p-10 border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+        <!-- p-6 md:p-10 border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl -->
+        <div class=" transition duration-300">
             <!-- Placeholder Icon/Shape (Triangle) -->
-            <div class="h-24 w-full flex items-center justify-center mb-6">
-                <!-- Simple Triangle SVG Placeholder -->
-                <svg viewBox="0 0 100 100" class="w-24 h-24 text-gray-300" fill="currentColor">
-                    <polygon points="50,10 90,90 10,90" />
-                </svg>
-            </div>
+            <img src="media/future.png" 
+            alt="Lock symbol with security icons" 
+            style="padding: 10%;"
+            onerror="this.src='https://placehold.co/600x400/f0f0f0/1e1e1e?text=Privacy+Lock+Graphic'" loading="lazy">
+
             
-            <h3 class="text-xl font-bold main-heading mb-3 text-primary-dark">Future-proof.</h3>
-            <p class="text-base text-gray-600">
-                Swap models, add GPUs, or go fully on‑prem — never vendor lock‑in.
+            <h3 class="text-xl font-bold main-heading mb-3 framer-style-clone color-dark">Future-proof</h3>
+            <p class="text-base framer-style-clone">
+                Swap models, add GPUs, or go fully on‑prem
             </p>
         </div>
 
     </div>
 </section>
 <!-- End of 3. Benefits Grid Section -->
-        
+
+<section class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="">
+            <img src="media/mx_eu_complience.jpg" 
+            alt="Lock symbol with security icons" 
+            style="padding: 10%;"
+            onerror="this.src='https://placehold.co/600x400/f0f0f0/1e1e1e?text=Privacy+Lock+Graphic'" loading="lazy">
+            
+            <h3 class="text-xl font-bold main-heading mb-3 framer-style-clone color-dark">MX & EU compliance</h3>
+            <p class="text-base framer-style-clone ">
+                Mexico 🇲🇽: INAI / LFPDPPP, NOM. Europe 🇪🇺: GDPR, ISO/IEC 27001 & 27701, ISO 14001
+            </p>
+        </div>
+
+        <div class="">
+            <img src="media/transparency.jpg" 
+            alt="Lock symbol with security icons" 
+            style="padding: 10%;"
+            onerror="this.src='https://placehold.co/600x400/f0f0f0/1e1e1e?text=Privacy+Lock+Graphic'" loading="lazy">
+            
+            <h3 class="text-xl font-bold main-heading mb-3 framer-style-clone color-dark">Transparent policies</h3>
+            <p class="text-base framer-style-clone ">
+                Clear privacy controls, opt‑in learning, and true user ownership for all customers
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- pt-16 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -->
+<section id="story" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols- gap-8">
+
+        <div class="space-y-6 text-lg max-w-2xl mx-auto framer-style-clone">
+            <!-- text-xl font-extrabold tracking-tight -->
+            <h3 class="text-xl font-extrabold  color-dark">Story</h3>
+            <p class="text-base color-grey">
+                Tlacua comes from Nahuatl “to feed.” We responsibly feed data to AI: minimal, transparent, and local.
+            </p>
+        </div>
+        <div class="text-left space-y-6 text-lg max-w-2xl mx-auto framer-style-clone ">
+                
+            <h4 class=" color-dark">Meet the tlacuache</h4>
+            <p class="text-base">
+                Our mascot, the tlacuache, is a clever and resilient native opossum. The tlacuache survives and thrives everywhere — just like our flexible, robust AI solutions.
+            </p>
+            <p class="text-base color-grey">
+                We built Tlacua to serve customers who value privacy, efficiency, and trust. Every part of our tech reflects our core values: security, transparency, and adaptability.
+            </p>
+            <p class="text-base color-grey">
+                By combining advanced local processing and strong compliance, Tlacua empowers teams to innovate without compromise.
+            </p>
+            
+        </div>
+
+    </div>
+</section>
     </main>
     
     <!-- Footer Placeholder -->
