@@ -62,6 +62,16 @@
             /* Optional: Responsive font sizing for better mobile display */
             padding: 0 10px;
         }
+                /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
         .color-dark {
             color: #1a1a1a; /* Almost black */
         }
@@ -75,20 +85,38 @@
 <body class="antialiased">
 
     <!-- Header / Navigation -->
-    <header class="w-full bg-white border-gray-100 sticky top-0 z-10">
-        <!-- <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-10"> -->
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <!-- Simple Logo Placeholder based on the uploaded icon -->
-                <!-- <div class="w-6 h-6 rounded-full bg-accent-green flex items-center justify-center text-primary-dark font-black text-xs">AI</div> -->
-                <span class="text-xl font-extrabold tracking-tight">tlacua.ai</span>
+    <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-extrabold tracking-tight">tlacua.ai</span>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
+                    <a href="#features" class="hover:text-accent-green transition">Features</a>
+                    <a href="#pricing" class="hover:text-accent-green transition">Pricing</a>
+                    <a href="#compliance" class="hover:text-accent-green transition">Compliance</a>
+                    <a href="#story" class="hover:text-accent-green transition">Our Story</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- Navigation Links -->
-            <div class="flex space-x-6 text-sm font-medium text-gray-700">
-                <a href="#features" class="hover:text-accent-green transition">Features</a>
-                <a href="#compliance" class="hover:text-accent-green transition">Compliance</a>
-                <a href="#story" class="hover:text-accent-green transition">Our Story</a>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col space-y-4 pt-4 pb-2 text-sm font-medium text-gray-700">
+                    <a href="#features" class="hover:text-accent-green transition">Features</a>
+                    <a href="#pricing" class="hover:text-accent-green transition">Pricing</a>
+                    <a href="#compliance" class="hover:text-accent-green transition">Compliance</a>
+                    <a href="#story" class="hover:text-accent-green transition">Our Story</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -176,6 +204,180 @@
             </div>
         </section>
 
+  <!-- Pricing Section -->
+  <section id="pricing" class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <h2 class="text-3xl md:text-4xl main-heading mb-4 text-center framer-style-clone color-dark">Simple, Transparent Pricing</h2>
+    <p class="text-center text-lg framer-style-clone mb-12">Choose the plan that fits your needs</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+        <!-- Shared Hardware Tier -->
+        <div class="border-2 border-gray-200 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-white">
+            <!-- Coming Soon Badge -->
+            <div class="absolute top-4 right-4 bg-accent-green text-primary-dark text-xs font-bold px-3 py-1 rounded-full">
+                COMING SOON
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-2 color-dark mt-8">Shared Hardware</h3>
+            <p class="text-base framer-style-clone mb-6">Perfect for getting started with private AI</p>
+            
+            <div class="mb-6">
+                <span class="text-4xl font-extrabold color-dark">€40</span>
+                <span class="text-lg framer-style-clone">/month</span>
+            </div>
+            
+            <ul class="space-y-3 mb-8 flex-grow">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Shared GPU resources</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Local processing</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Zero data retention</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Domain-tuned SLMs</span>
+                </li>
+            </ul>
+            
+            <button class="w-full bg-gray-200 text-gray-500 font-bold py-3 px-6 rounded-lg cursor-not-allowed" disabled>
+                Coming Soon
+            </button>
+        </div>
+
+        <!-- Mac Mini M4 Tier -->
+        <div class="border-2 border-accent-green rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-white">
+            <!-- Recommended Badge -->
+            <div class="absolute top-4 right-4 bg-primary-dark text-accent-green text-xs font-bold px-3 py-1 rounded-full">
+                POPULAR
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-2 color-dark mt-8">Mac Mini M4</h3>
+            <p class="text-base framer-style-clone mb-6">Efficient Apple Silicon for everyday AI tasks</p>
+            
+            <div class="mb-6">
+                <span class="text-4xl font-extrabold color-dark">€130</span>
+                <span class="text-lg framer-style-clone">/month</span>
+            </div>
+            
+            <ul class="space-y-3 mb-8 flex-grow">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Dedicated Mac Mini M4</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Energy-efficient processing</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Full enterprise features</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Priority support</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Custom model deployment</span>
+                </li>
+            </ul>
+            
+            <button class="w-full bg-accent-green hover:bg-accent-green/90 text-primary-dark font-bold py-3 px-6 rounded-lg transition duration-300">
+                Get Started
+            </button>
+        </div>
+
+        <!-- NVIDIA 5090 Tier -->
+        <div class="border-2 border-gray-900 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative bg-gradient-to-br from-gray-50 to-white flex flex-col">
+            <!-- Premium Badge -->
+            <div class="absolute top-4 right-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
+                PREMIUM
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-2 color-dark mt-8">NVIDIA RTX 5090</h3>
+            <p class="text-base framer-style-clone mb-6">Maximum power for demanding workloads</p>
+            
+            <div class="mb-6">
+                <span class="text-4xl font-extrabold color-dark">€550</span>
+                <span class="text-lg framer-style-clone">/month</span>
+            </div>
+            
+            <ul class="space-y-3 mb-8 flex-grow">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Dedicated NVIDIA RTX 5090</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Ultimate performance</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Large model support (70B+)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Premium support & SLA</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Advanced customization</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-accent-green mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-base framer-style-clone">Dedicated account manager</span>
+                </li>
+            </ul>
+            
+            <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                Contact Sales
+            </button>
+        </div>
+
+    </div>
+    
+    <!-- Additional Info -->
+    <p class="text-center text-base framer-style-clone mt-8">
+        All plans include zero data retention, local processing, and full compliance with MX & EU regulations
+    </p>
+</section>
+
         <!-- 3. Benefits Grid (Lower Carbon, Enterprise Ready, Future-proof) -->
 <section id="compliance" class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl main-heading mb-12 text-center text-gray-800 framer-style-clone color-dark">Why Tlacua?</h2>
@@ -258,6 +460,9 @@
 
     </div>
 </section>
+
+
+
 <!-- pt-16 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -->
 <section id="story" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols- gap-8">
@@ -296,4 +501,22 @@
     </footer>
 
 </body>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
+</script>
 </html>
