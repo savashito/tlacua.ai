@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac Studio Plans | Tlacua.ai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1e1e1e',
+                        'accent-green': '#00ffc8',
+                        'text-light': '#f0f0f0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1e1e1e;
+            font-family: 'Inter', sans-serif;
+        }
+        .main-heading {
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        .color-dark {
+            color: #1a1a1a;
+        }
+        .color-grey {
+            color: rgb(153, 153, 153);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-extrabold tracking-tight">tlacua.ai</a>
+            </div>
+            <nav class="flex space-x-6 text-sm font-medium text-gray-700">
+                <a href="index.html#features" class="hover:text-accent-green transition">Features</a>
+                <a href="index.html#pricing" class="hover:text-accent-green transition">Pricing</a>
+                <a href="index.html#story" class="hover:text-accent-green transition">Our Story</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        
+        <!-- Hero Section -->
+        <section class="pt-12 pb-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold color-dark mb-4">Choose your Mac Studio</h1>
+            <p class="text-lg color-grey mb-2">Pro-level Apple Silicon for demanding AI workloads</p>
+            <p class="text-base color-grey">Run larger models with up to 512GB unified memory</p>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+
+                <!-- M4 Max Base Tier -->
+                <div class="border-2 border-gray-200 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-white">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2 color-dark">M4 Max Essential</h3>
+                        <p class="text-sm color-grey mb-4">Perfect balance of performance & value</p>
+                        <div class="mb-4">
+                            <span class="text-4xl font-extrabold color-dark">€285</span>
+                            <span class="text-base color-grey">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <h4 class="text-sm font-bold color-dark mb-3">SPECIFICATIONS</h4>
+                        <ul class="space-y-2 text-sm color-grey">
+                            <li class="flex justify-between">
+                                <span>Chip</span>
+                                <span class="font-semibold text-gray-900">Apple M4 Max</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>CPU</span>
+                                <span class="font-semibold text-gray-900">14-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>GPU</span>
+                                <span class="font-semibold text-gray-900">32-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Neural Engine</span>
+                                <span class="font-semibold text-gray-900">16-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory</span>
+                                <span class="font-semibold text-gray-900">36 GB</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory Bandwidth</span>
+                                <span class="font-semibold text-gray-900">546 GB/s</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Storage</span>
+                                <span class="font-semibold text-gray-900">512GB SSD</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Max Power</span>
+                                <span class="font-semibold text-gray-900">120 W</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold color-dark mb-3">IDEAL FOR</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">13B-20B parameter models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Advanced document processing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Multi-modal AI tasks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Small team production</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- M4 Max Professional (Highlighted) -->
+                <div class="border-2 border-blue-500 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-white">
+                    <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        BEST VALUE
+                    </div>
+                    
+                    <div class="mb-6 mt-6">
+                        <h3 class="text-2xl font-bold mb-2 color-dark">M4 Max Pro</h3>
+                        <p class="text-sm color-grey mb-4">Maximum M4 Max performance</p>
+                        <div class="mb-4">
+                            <span class="text-4xl font-extrabold color-dark">€395</span>
+                            <span class="text-base color-grey">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <h4 class="text-sm font-bold color-dark mb-3">SPECIFICATIONS</h4>
+                        <ul class="space-y-2 text-sm color-grey">
+                            <li class="flex justify-between">
+                                <span>Chip</span>
+                                <span class="font-semibold text-gray-900">Apple M4 Max</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>CPU</span>
+                                <span class="font-semibold text-gray-900">16-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>GPU</span>
+                                <span class="font-semibold text-gray-900">40-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Neural Engine</span>
+                                <span class="font-semibold text-gray-900">16-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory</span>
+                                <span class="font-semibold text-gray-900">128 GB</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory Bandwidth</span>
+                                <span class="font-semibold text-gray-900">546 GB/s</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Storage</span>
+                                <span class="font-semibold text-gray-900">1TB SSD</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Max Power</span>
+                                <span class="font-semibold text-gray-900">145 W</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold color-dark mb-3">IDEAL FOR</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Up to 34B models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">70B with quantization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Advanced fine-tuning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Enterprise production</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- M3 Ultra Tiers -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold color-dark mb-4 text-center">M3 Ultra Configurations</h2>
+                <p class="text-center color-grey mb-8">Ultimate performance for the most demanding workloads</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- M3 Ultra Standard -->
+                <div class="border-2 border-gray-900 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-gradient-to-br from-gray-50 to-white">
+                    <div class="absolute top-4 right-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        ULTRA
+                    </div>
+                    
+                    <div class="mb-6 mt-6">
+                        <h3 class="text-2xl font-bold mb-2 color-dark">M3 Ultra Standard</h3>
+                        <p class="text-sm color-grey mb-4">Next-level AI performance</p>
+                        <div class="mb-4">
+                            <span class="text-4xl font-extrabold color-dark">€695</span>
+                            <span class="text-base color-grey">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <h4 class="text-sm font-bold color-dark mb-3">SPECIFICATIONS</h4>
+                        <ul class="space-y-2 text-sm color-grey">
+                            <li class="flex justify-between">
+                                <span>Chip</span>
+                                <span class="font-semibold text-gray-900">Apple M3 Ultra</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>CPU</span>
+                                <span class="font-semibold text-gray-900">28-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>GPU</span>
+                                <span class="font-semibold text-gray-900">60-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Neural Engine</span>
+                                <span class="font-semibold text-gray-900">32-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory</span>
+                                <span class="font-semibold text-gray-900">256 GB</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory Bandwidth</span>
+                                <span class="font-semibold text-gray-900">819 GB/s</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Storage</span>
+                                <span class="font-semibold text-gray-900">1TB SSD</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Max Power</span>
+                                <span class="font-semibold text-gray-900">240 W</span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold color-dark mb-3">IDEAL FOR</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">34B-70B models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Multiple concurrent workloads</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Complex model training</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Research & development</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+
+                <!-- M3 Ultra Maximum -->
+                <div class="border-2 border-purple-600 rounded-2xl p-8 transition duration-300 hover:shadow-xl relative flex flex-col bg-gradient-to-br from-purple-50 to-white">
+                    <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        MAXIMUM
+                    </div>
+                    
+                    <div class="mb-6 mt-6">
+                        <h3 class="text-2xl font-bold mb-2 color-dark">M3 Ultra Maximum</h3>
+                        <p class="text-sm color-grey mb-4">Absolute peak performance</p>
+                        <div class="mb-4">
+                            <span class="text-4xl font-extrabold color-dark">€1,295</span>
+                            <span class="text-base color-grey">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <h4 class="text-sm font-bold color-dark mb-3">SPECIFICATIONS</h4>
+                        <ul class="space-y-2 text-sm color-grey">
+                            <li class="flex justify-between">
+                                <span>Chip</span>
+                                <span class="font-semibold text-gray-900">Apple M3 Ultra</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>CPU</span>
+                                <span class="font-semibold text-gray-900">32-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>GPU</span>
+                                <span class="font-semibold text-gray-900">80-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Neural Engine</span>
+                                <span class="font-semibold text-gray-900">32-core</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory</span>
+                                <span class="font-semibold text-gray-900">512GB</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Memory Bandwidth</span>
+                                <span class="font-semibold text-gray-900">819 GB/s</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Storage</span>
+                                <span class="font-semibold text-gray-900">1TB SSD</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Max Power</span>
+                                <span class="font-semibold text-gray-900">270 W</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6 flex-grow">
+                        <h4 class="text-sm font-bold color-dark mb-3">IDEAL FOR</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Up to 600B parameter models</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Full LLM deployment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Enterprise-scale operations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="color-grey">Mission-critical AI infrastructure</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Feature Comparison -->
+        <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold color-dark mb-8 text-center">What's included in all plans</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold color-dark mb-2">Zero Data Retention</h3>
+                    <p class="text-sm color-grey">Complete data privacy</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold color-dark mb-2">Energy Efficient</h3>
+                    <p class="text-sm color-grey">Low power consumption</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold color-dark mb-2">Full Compliance</h3>
+                    <p class="text-sm color-grey">MX & EU certified</p>
+                </div>
+
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold color-dark mb-2">Premium Support</h3>
+                    <p class="text-sm color-grey">Dedicated assistance</p>
+                </div>
+            </div>
+
+            <!-- Detailed Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-lg shadow-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="text-left p-4 font-bold color-dark">Feature</th>
+                            <th class="text-center p-4 font-bold color-dark">M4 Max Essential</th>
+                            <th class="text-center p-4 font-bold color-dark">M4 Max Pro</th>
+                            <th class="text-center p-4 font-bold color-dark">M3 Ultra Std</th>
+                            <th class="text-center p-4 font-bold color-dark">M3 Ultra Max</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-t">
+                            <td class="p-4 color-grey">Unified Memory</td>
+                            <td class="p-4 text-center font-semibold">36GB</td>
+                            <td class="p-4 text-center font-semibold">128GB</td>
+                            <td class="p-4 text-center font-semibold">256GB</td>
+                            <td class="p-4 text-center font-semibold">512GB</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4 color-grey">Memory Bandwidth</td>
+                            <td class="p-4 text-center font-semibold">546 GB/s</td>
+                            <td class="p-4 text-center font-semibold">546 GB/s</td>
+                            <td class="p-4 text-center font-semibold">819 GB/s</td>
+                            <td class="p-4 text-center font-semibold">819 GB/s</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4 color-grey">GPU Cores</td>
+                            <td class="p-4 text-center font-semibold">32</td>
+                            <td class="p-4 text-center font-semibold">40</td>
+                            <td class="p-4 text-center font-semibold">60</td>
+                            <td class="p-4 text-center font-semibold">80</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4 color-grey">Storage</td>
+                            <td class="p-4 text-center font-semibold">512GB</td>
+                            <td class="p-4 text-center font-semibold">1TB</td>
+                            <td class="p-4 text-center font-semibold">1TB</td>
+                            <td class="p-4 text-center font-semibold">1TB</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4 color-grey">Max Model Size</td>
+                            <td class="p-4 text-center font-semibold">13B-20B</td>
+                            <td class="p-4 text-center font-semibold">34B</td>
+                            <td class="p-4 text-center font-semibold">70B</td>
+                            <td class="p-4 text-center font-semibold">600B+</td>
+                        </tr>
+                        <tr class="border-t bg-gray-50">
+                            <td class="p-4 color-grey">Concurrent Users</td>
+                            <td class="p-4 text-center font-semibold">5-10</td>
+                            <td class="p-4 text-center font-semibold">10-20</td>
+                            <td class="p-4 text-center font-semibold">20-50</td>
+                            <td class="p-4 text-center font-semibold">50+</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-4 color-grey">Support Response</td>
+                            <td class="p-4 text-center font-semibold">12h</td>
+                            <td class="p-4 text-center font-semibold">4h</td>
+                            <td class="p-4 text-center font-semibold">2h</td>
+                            <td class="p-4 text-center font-semibold">1h + Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Why Mac Studio Section -->
+        <section class="bg-gray-50 py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold color-dark mb-8 text-center">Why choose Mac Studio?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl">
+                        <h3 class="text-xl font-bold color-dark mb-3">Unified Memory Architecture</h3>
+                        <p class="text-sm color-grey">Up to 512GB of unified memory allows models to access data faster than traditional GPU setups, with no data transfer bottlenecks.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl">
+                        <h3 class="text-xl font-bold color-dark mb-3">Lower Energy Costs</h3>
+                        <p class="text-sm color-grey">Mac Studio consumes significantly less power than comparable GPU workstations, reducing operational costs and carbon footprint.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl">
+                        <h3 class="text-xl font-bold color-dark mb-3">Silent Operation</h3>
+                        <p class="text-sm color-grey">Unlike noisy GPU servers, Mac Studio operates quietly, making it perfect for office environments without dedicated server rooms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold color-dark mb-4">Need different hardware?</h2>
+                <p class="text-lg color-grey mb-8">Explore our Mac Mini for lighter workloads or NVIDIA RTX 5090 for maximum GPU performance</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mac-mini.html" class="inline-block bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        View Mac Mini Plans
+                    </a>
+                    <a href="index.html#pricing" class="inline-block border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 font-bold py-3 px-8 rounded-lg transition duration-300">
+                        View All Hardware
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-gray-100 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Tlacua AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
