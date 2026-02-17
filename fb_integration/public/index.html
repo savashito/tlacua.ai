@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tlacua | WhatsApp Business API Permission</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-teal': '#00ffc8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Load the Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1e1e1e;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .main-heading {
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .color-dark {
+            color: #1a1a1a;
+        }
+
+        .color-grey {
+            color: rgb(153, 153, 153);
+        }
+
+        .accent-text {
+            color: #00ffc8;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .permission-box {
+            border-left: 3px solid #00ffc8;
+            padding: 24px;
+            background-color: #fafafa;
+            border-radius: 0.5rem;
+        }
+
+        .usage-item {
+            margin-bottom: 20px;
+        }
+
+        .usage-item strong {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .nested-list {
+            margin-left: 20px;
+            color: rgb(153, 153, 153);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .nested-list li {
+            margin-bottom: 8px;
+            list-style-type: disc;
+        }
+
+        .cta-button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #333333;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #f5f5f5;
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .step-number {
+            background-color: #00ffc8;
+            color: #1a1a1a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .case-study {
+            border-left: 3px solid #00ffc8;
+            padding: 24px;
+            background-color: #fafafa;
+            border-radius: 0.5rem;
+        }
+
+        .case-study h4 {
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .case-study ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: rgb(153, 153, 153);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .case-study ul li {
+            margin-bottom: 8px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #f0f0f0;
+            border-top: 2px solid #00ffc8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-extrabold tracking-tight">tlacua.ai</span>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
+                    <a href="#permissions" class="hover:text-accent-teal transition">Permissions</a>
+                    <a href="#how-used" class="hover:text-accent-teal transition">How Used</a>
+                    <a href="#case-study" class="hover:text-accent-teal transition">Example</a>
+                    <a href="#flow" class="hover:text-accent-teal transition">Flow</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col space-y-4 pt-4 pb-2 text-sm font-medium text-gray-700">
+                    <a href="#permissions" class="hover:text-accent-teal transition">Permissions</a>
+                    <a href="#how-used" class="hover:text-accent-teal transition">How Used</a>
+                    <a href="#case-study" class="hover:text-accent-teal transition">Example</a>
+                    <a href="#flow" class="hover:text-accent-teal transition">Flow</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="w-full">
+
+        <!-- Hero Section -->
+        <section class="pt-16 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6">
+                <h1 class="section-title color-dark">
+                    WhatsApp Business API
+                </h1>
+                <p class="text-xl color-grey max-w-2xl mx-auto">
+                    Connect your WhatsApp Business Account to enable AI-powered customer service through Tlacua. Manage appointments, inquiries, and follow-ups with your customers.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <button class="cta-button" onclick="requestPermission()">
+                        <span id="btn-text">🔗 Connect WhatsApp Account</span>
+                    </button>
+                    <button class="cta-button secondary" onclick="loadAccounts()">📊 View Connected Accounts</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Permissions Section -->
+        <section id="permissions" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-12">What Permissions Does Tlacua Request?</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <p class="text-lg color-grey mb-6">
+                        We request only the permissions necessary to deliver AI-powered customer service through WhatsApp. Here's exactly what each permission does and why we need it:
+                    </p>
+                </div>
+
+                <div class="permission-box">
+                    <h3 class="font-bold text-lg color-dark mb-4">📱 whatsapp_business_messaging</h3>
+                    <p class="color-grey text-base mb-4">
+                        This is the core permission that enables Tlacua to send and receive WhatsApp messages on behalf of your business.
+                    </p>
+                    <ul class="nested-list space-y-2">
+                        <li><strong>Sending messages:</strong> Your AI assistant can respond to customer inquiries 24/7</li>
+                        <li><strong>Receiving messages:</strong> Customer messages are delivered to your system instantly</li>
+                        <li><strong>Media handling:</strong> Customers can share images, documents, and files in conversations</li>
+                        <li><strong>Message threads:</strong> Conversations are organized and can be managed by your team</li>
+                    </ul>
+                </div>
+
+                <div class="permission-box">
+                    <h3 class="font-bold text-lg color-dark mb-4">📊 Business Profile Management</h3>
+                    <p class="color-grey text-base mb-4">
+                        Tlacua retrieves and can update your business profile information to provide accurate automated responses.
+                    </p>
+                    <ul class="nested-list space-y-2">
+                        <li>Business hours and availability</li>
+                        <li>Address and location information</li>
+                        <li>Business description and contact details</li>
+                        <li>Service categories and offerings</li>
+                    </ul>
+                </div>
+
+                <div class="permission-box">
+                    <h3 class="font-bold text-lg color-dark mb-4">📞 Phone Number Registration</h3>
+                    <p class="color-grey text-base mb-4">
+                        Tlacua needs to register and manage your business phone number with Meta to enable WhatsApp messaging.
+                    </p>
+                </div>
+
+                <div class="permission-box">
+                    <h3 class="font-bold text-lg color-dark mb-4">📈 Analytics</h3>
+                    <p class="color-grey text-base mb-4">
+                        We collect de-identified metrics to help your business improve customer service (aggregated data only, no personal information for marketing).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Used Section -->
+        <section id="how-used" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-12">How Tlacua Uses These Permissions</h2>
+            
+            <div class="space-y-8">
+                <div class="usage-item">
+                    <strong class="color-dark text-lg">1. Sending and Receiving WhatsApp Messages</strong>
+                    <p class="color-grey text-base mb-3">
+                        The Tlacua AI bot responds to customer inquiries with intelligent, context-aware replies:
+                    </p>
+                    <ul class="nested-list">
+                        <li>Business hours and service information</li>
+                        <li>Appointment availability and scheduling</li>
+                        <li>Pricing and product information</li>
+                        <li>Order or service status updates</li>
+                        <li>Post-service follow-ups and surveys</li>
+                    </ul>
+                </div>
+
+                <div class="usage-item">
+                    <strong class="color-dark text-lg">2. Media Handling</strong>
+                    <p class="color-grey text-base mb-3">
+                        Customers can share documents and images directly in WhatsApp:
+                    </p>
+                    <ul class="nested-list">
+                        <li>Upload receipts or proof of purchase</li>
+                        <li>Send product photos or medical images</li>
+                        <li>Share documents for verification</li>
+                        <li>Store media securely for support agents</li>
+                    </ul>
+                </div>
+
+                <div class="usage-item">
+                    <strong class="color-dark text-lg">3. Business Profile Management</strong>
+                    <p class="color-grey text-base mb-3">
+                        Tlacua uses your business information to provide accurate responses:
+                    </p>
+                    <ul class="nested-list">
+                        <li>Reference your business hours in responses</li>
+                        <li>Share accurate address and contact information</li>
+                        <li>Provide details about your services</li>
+                        <li>Suggest contacting you during business hours if needed</li>
+                    </ul>
+                </div>
+
+                <div class="usage-item">
+                    <strong class="color-dark text-lg">4. Phone Number Registration</strong>
+                    <p class="color-grey text-base mb-3">
+                        Your phone number is registered with Meta's WhatsApp Business Platform to enable messaging capabilities.
+                    </p>
+                </div>
+
+                <div class="usage-item">
+                    <strong class="color-dark text-lg">5. Analytics (Aggregated & Anonymized)</strong>
+                    <p class="color-grey text-base mb-3">
+                        We collect metrics to help you understand and improve customer interactions:
+                    </p>
+                    <ul class="nested-list">
+                        <li>Number of conversations handled</li>
+                        <li>Average response time</li>
+                        <li>Customer satisfaction ratings</li>
+                        <li>Types of issues commonly asked</li>
+                        <li><strong>No personal customer data is used for marketing without explicit consent.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-12">Value for Your Customers</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="font-bold color-dark text-lg">✓ 24/7 Instant Responses</h3>
+                    <p class="color-grey text-base">Customers get immediate answers instead of waiting for your team, even outside business hours.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold color-dark text-lg">✓ Easy Appointment Scheduling</h3>
+                    <p class="color-grey text-base">Book appointments directly through WhatsApp with automatic confirmations and reminders.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold color-dark text-lg">✓ Quick Issue Resolution</h3>
+                    <p class="color-grey text-base">Common issues are resolved instantly without phone calls or in-person visits.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold color-dark text-lg">✓ Seamless Document Sharing</h3>
+                    <p class="color-grey text-base">Send and receive documents directly in the chat for a complete support experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Section -->
+        <section id="case-study" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-12">Real-World Example: Auditivos Urquiza</h2>
+            
+            <div class="case-study">
+                <h3 class="font-bold color-dark text-lg mb-4">About the Business</h3>
+                <p class="color-grey text-base mb-6">
+                    Auditivos Urquiza is a medium-sized audiology clinic in Mexico serving hundreds of patients annually. Like many healthcare providers, they faced challenges with appointment scheduling, patient inquiries, and follow-ups.
+                </p>
+
+                <h4 class="font-bold color-dark mb-3">How Tlacua Helps</h4>
+                <ul class="list-disc ml-5 space-y-2 color-grey text-base mb-6">
+                    <li>Patients schedule hearing tests and device maintenance appointments automatically</li>
+                    <li>Instant answers to questions about warranties, battery replacements, and clinic locations</li>
+                    <li>Automatic post-appointment follow-ups to check patient satisfaction</li>
+                    <li>Complex complaints are escalated to human staff with full conversation context</li>
+                </ul>
+
+                <p class="color-dark font-bold text-base">
+                    Result: Reduced waiting times and the ability to serve more patients with the same staff size.
+                </p>
+            </div>
+        </section>
+
+        <!-- OAuth Flow Section -->
+        <section id="flow" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-12">How the Connection Works</h2>
+            
+            <p class="color-grey text-base mb-12">
+                We use OAuth 2.0, the industry-standard secure authentication method, to request permissions. Here's how it works:
+            </p>
+
+            <div class="space-y-6">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">You Click "Connect WhatsApp Account"</h3>
+                        <p class="color-grey text-base">You initiate the secure connection from Tlacua</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">Redirect to Meta's Secure Login</h3>
+                        <p class="color-grey text-base">You're taken to Meta's official authentication page</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">Review Permissions</h3>
+                        <p class="color-grey text-base">Meta clearly shows exactly what permissions Tlacua is requesting</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">Grant or Deny</h3>
+                        <p class="color-grey text-base">You choose whether to authorize the connection. You're in full control.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">Secure Token Exchange</h3>
+                        <p class="color-grey text-base">Tlacua backend securely receives an authorization token from Meta</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 class="font-bold color-dark mb-2">Account Connected</h3>
+                        <p class="color-grey text-base">Your WhatsApp Business Account is ready to use with Tlacua</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connected Accounts Section -->
+        <div id="accounts-section" style="display: none;" class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title color-dark mb-8">Connected Accounts</h2>
+            <div id="account-list" class="space-y-4">
+                <p class="color-grey text-base"><span class="spinner"></span>Loading accounts...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-gray-100 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
+            <p class="mb-2">&copy; 2025 Tlacua AI. All rights reserved.</p>
+            <p class="color-grey text-xs">
+                🔒 Your WhatsApp Business credentials are managed securely by Meta. Tlacua only uses the whatsapp_business_messaging permission for customer service automation in accordance with WhatsApp Business Platform policies.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Permission Request
+        async function requestPermission() {
+            const btn = document.querySelector('.cta-button');
+            const btnText = document.getElementById('btn-text');
+            const originalText = btnText.innerHTML;
+            
+            try {
+                btnText.innerHTML = '<span class="spinner"></span>Redirecting...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/auth-url');
+                const data = await response.json();
+                
+                if (data.authUrl) {
+                    // Redirect to Meta's OAuth page (production)
+                    window.location.href = data.authUrl;
+                } else {
+                    throw new Error('Failed to get auth URL');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                btnText.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Error: ' + error.message);
+            }
+        }
+
+        // Load Accounts
+        async function loadAccounts() {
+            const section = document.getElementById('accounts-section');
+            const list = document.getElementById('account-list');
+            
+            section.style.display = 'block';
+            list.innerHTML = '<p class="color-grey text-base"><span class="spinner"></span>Loading accounts...</p>';
+
+            try {
+                const response = await fetch('/api/accounts');
+                const data = await response.json();
+
+                if (data.accounts.length === 0) {
+                    list.innerHTML = '<p class="color-grey text-base text-center">No connected accounts yet. Click "Connect WhatsApp Account" to get started.</p>';
+                } else {
+                    list.innerHTML = data.accounts.map(account => `
+                        <div class="permission-box">
+                            <h3 class="font-bold color-dark mb-2">👤 ${account.name}</h3>
+                            <p class="color-grey text-sm mb-2">📧 ${account.email}</p>
+                            <p class="accent-text text-sm">✓ Connected on ${new Date(account.connectedAt).toLocaleDateString()}</p>
+                            <p class="color-grey text-xs mt-3">Permissions: ${account.permissions.join(', ')}</p>
+                        </div>
+                    `).join('');
+                }
+                
+                // Scroll to section
+                section.scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error loading accounts:', error);
+                list.innerHTML = '<p class="color-dark text-base">Error loading accounts</p>';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+    <script>
+        async function requestPermission() {
+            const btn = document.querySelector('.btn-primary');
+            const btnText = document.getElementById('btn-text');
+            const originalText = btnText.innerHTML;
+            
+            try {
+                btnText.innerHTML = '<span class="spinner"></span>Redirecting...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/auth-url');
+                const data = await response.json();
+                
+                if (data.authUrl) {
+                    // Redirect to Meta's OAuth page (production)
+                    window.location.href = data.authUrl;
+                } else {
+                    throw new Error('Failed to get auth URL');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                btnText.innerHTML = originalText;
+                btn.disabled = false;
+                showErrorMessage('Error: ' + error.message);
+            }
+        }
+
+        async function loadAccounts() {
+            const section = document.getElementById('accounts-section');
+            const list = document.getElementById('account-list');
+            
+            section.style.display = 'block';
+            list.innerHTML = '<p class="loading"><span class="spinner"></span>Loading accounts...</p>';
+
+            try {
+                const response = await fetch('/api/accounts');
+                const data = await response.json();
+
+                if (data.accounts.length === 0) {
+                    list.innerHTML = '<p style="text-align: center; color: #999;">No connected accounts yet. Click "Connect WhatsApp Account" to get started.</p>';
+                } else {
+                    list.innerHTML = data.accounts.map(account => `
+                        <div class="account-item">
+                            <strong>👤 ${account.name}</strong><br>
+                            📧 ${account.email}<br>
+                            <span class="status">✓ Connected on ${new Date(account.connectedAt).toLocaleDateString()}</span><br>
+                            <small style="color: #999;">Permissions: ${account.permissions.join(', ')}</small>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading accounts:', error);
+                list.innerHTML = '<p style="color: #ff6b6b;">Error loading accounts</p>';
+            }
+        }
+
+        function showErrorMessage(message) {
+            const alert = document.createElement('div');
+            alert.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #ff6b6b;
+                color: white;
+                padding: 16px 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                font-size: 14px;
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            alert.textContent = message;
+            document.body.appendChild(alert);
+
+            setTimeout(() => {
+                alert.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => alert.remove(), 300);
+            }, 4000);
+        }
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

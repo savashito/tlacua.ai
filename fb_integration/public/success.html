@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Successful - Tlacua</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-teal': '#00ffc8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Load the Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1e1e1e;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .color-dark {
+            color: #1a1a1a;
+        }
+
+        .color-grey {
+            color: rgb(153, 153, 153);
+        }
+
+        .accent-text {
+            color: #3e776a;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .permission-box {
+            border-left: 3px solid #00ffc8;
+            padding: 24px;
+            background-color: #fafafa;
+            border-radius: 0.5rem;
+        }
+
+        .cta-button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #333333;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-extrabold tracking-tight">tlacua.ai</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full flex-1">
+        <section class="max-w-4xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-8">
+                <div class="text-6xl mb-6">✅</div>
+                
+                <h1 class="section-title color-dark">
+                    Connection Successful!
+                </h1>
+                
+                <p class="text-xl color-grey max-w-2xl mx-auto">
+                    Your WhatsApp Business Account is now connected to Tlacua
+                </p>
+
+                <div id="user-info" class="permission-box inline-block">
+                    <p id="user-name" class="accent-text text-base font-semibold">Loading user information...</p>
+                </div>
+
+                <!-- Permissions Granted -->
+                <div class="permission-box max-w-2xl mx-auto text-left">
+                    <h3 class="font-bold color-dark text-lg mb-6">🔐 Permissions Granted</h3>
+                    <ul class="space-y-3 color-grey text-base">
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">✓</span>
+                            <span><strong class="color-dark">whatsapp_business_messaging</strong> - Send and receive messages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">✓</span>
+                            <span>Upload and retrieve media from customer conversations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">✓</span>
+                            <span>Access WhatsApp business profile information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">✓</span>
+                            <span>Manage phone number registration with Meta</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">✓</span>
+                            <span>Collect analytics to improve customer service</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="permission-box max-w-2xl mx-auto text-left">
+                    <h3 class="font-bold color-dark text-lg mb-6">🚀 What Happens Next</h3>
+                    <ul class="space-y-3 color-grey text-base">
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>Your backend can now send messages to customers through the WhatsApp Business API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>Set up webhooks to receive incoming customer messages in real-time</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>The AI-powered bot will handle customer inquiries, appointments, and support requests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>Retrieve media and profile information using the WhatsApp Business API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>Track message delivery and use analytics to improve your customer service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-text mr-3 mt-1">→</span>
+                            <span>Manage customer conversations and escalate to human agents when needed</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <button class="cta-button" onclick="goToDashboard()">📊 Go to Dashboard</button>
+                    <button class="cta-button secondary" onclick="goHome()">← Back Home</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-white border-t border-gray-100 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
+            <p class="mb-2">&copy; 2025 Tlacua AI. All rights reserved.</p>
+            <p class="color-grey text-xs">
+                🔒 Your WhatsApp Business credentials are managed securely by Meta. Tlacua only uses the whatsapp_business_messaging permission for customer service automation in accordance with WhatsApp Business Platform policies.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Get username from URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const userName = params.get('user');
+        
+        if (userName) {
+            document.getElementById('user-name').textContent = 
+                `👤 Connected as: ${decodeURIComponent(userName)}`;
+        }
+
+        function goToDashboard() {
+            alert('Dashboard would show connected WhatsApp accounts, conversation history, and analytics.');
+            window.location.href = '/';
+        }
+
+        function goHome() {
+            window.location.href = '/';
+        }
+    </script>
+
+</body>
+</html>
