@@ -92,7 +92,7 @@
             list-style-type: disc;
         }
 
-        .cta-button {
+        .btn-primary {
             background-color: #1a1a1a;
             color: white;
             padding: 12px 28px;
@@ -101,19 +101,28 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
-        .cta-button:hover {
+        .btn-primary:hover {
             background-color: #333333;
         }
 
-        .cta-button.secondary {
+        .btn-secondary {
             background-color: transparent;
             border: 2px solid #1a1a1a;
             color: #1a1a1a;
+            padding: 12px 28px;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
         }
 
-        .cta-button.secondary:hover {
+        .btn-secondary:hover {
             background-color: #f5f5f5;
         }
 
@@ -234,10 +243,10 @@
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                    <button class="cta-button" onclick="requestPermission()">
+                    <button class="btn-primary" onclick="requestPermission()">
                         <span id="btn-text">🔗 Connect WhatsApp Account</span>
                     </button>
-                    <button class="cta-button secondary" onclick="loadAccounts()">📊 View Connected Accounts</button>
+                    <button class="btn-secondary" onclick="loadAccounts()">📊 View Connected Accounts</button>
                 </div>
             </div>
         </section>
@@ -508,7 +517,7 @@
 
         // Permission Request
         async function requestPermission() {
-            const btn = document.querySelector('.cta-button');
+            const btn = document.querySelector('.btn-primary');
             const btnText = document.getElementById('btn-text');
             const originalText = btnText.innerHTML;
             
@@ -572,7 +581,7 @@
 
     <script>
         async function requestPermission() {
-            const btn = document.querySelector('.btn-primary');
+            const btn = document.querySelector('.cta-button');
             const btnText = document.getElementById('btn-text');
             const originalText = btnText.innerHTML;
             

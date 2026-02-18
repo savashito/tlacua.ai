@@ -161,5 +161,4 @@ app.listen(PORT, () => {
   console.log(`\n⚙️  Configuration:`);
   console.log(`   Client ID: ${CLIENT_ID}`);
   console.log(`   Redirect URI: ${REDIRECT_URI}`);
-  console.log(`\n📝 Note: Update your .env file with Meta app credentials to enable real OAuth flow\n`);
 });
